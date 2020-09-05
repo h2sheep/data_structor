@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    
+    <script src="stack.js"></script>
+    <script>
+      
+      
+      // test：十进制转为二进制
+      
+      function dec2bin(n) {
+        const stack = new Stack()
+        
+        let rem
+        
+        while (n > 0) {
+          rem = n % 2 // 余数
+          n = (n - rem) / 2 
+          stack.push(rem)
+        }
+        
+        let res = ''
+        while (!stack.isEmpty()) {
+          // 依次出栈
+          res += stack.pop()
+        }
+        
+        return res
+      }
+      
+      console.log(dec2bin(10)) // 1010
+      console.log(dec2bin(100)) // 1100100
+      console.log(dec2bin(1000)) // 1111101000
+      
+    </script>
+    
+	</body>
+</html>

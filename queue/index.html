@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    
+    <script src="queue.js"></script>
+    <script>
+      
+      // test：arr中的人围成一圈，从0开始轮流报数，报到n的人淘汰直至最后一人为胜利者
+      
+      function isWinner(arr, n) {
+        const q = new Queue()
+        
+        // 依次入队列
+        while (arr.length) {
+          q.enqueue(arr.shift())
+        }
+        
+        // 轮流报数，不是指定数字再次进入队列
+        while (q.size() > 1) {
+          for (let i = 0; i < n; i++) {
+            q.enqueue(q.dequeue())
+          }
+          q.dequeue()
+        }
+        
+        // 剩余的最后一个就是胜利者
+        return q.front()
+      }
+      
+      
+      const arr = ['yui', 'mio', 'emt', 'yuki']
+      // 'yui', 'mio', 'emt'
+      // 'mio', 'emt'
+      // 'mio'
+      
+      console.log(isWinner(arr, 3)) // mio
+      
+    </script>
+    
+	</body>
+</html>
