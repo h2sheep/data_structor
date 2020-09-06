@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    
+    <script src="linked_list.js"></script>
+    <script src="doubly_linked_list.js"></script>
+    <script>
+      
+      // ----- link list test --------
+      
+      console.log('// ---------- link list -------------')
+      const ll = new LinkedList()
+      
+      ll.append(1)
+      ll.append(2)
+      
+      ll.insert(0, 0)
+      ll.insert(3, 3)
+      
+      console.log(ll.get(2)) // 2
+      
+      console.log(ll.indexOf(3)) // 3
+      console.log(ll.indexOf(999)) // -1
+      
+      ll.removeAt(3)
+      ll.remove(2)
+      
+      ll.update(0, 'yui')
+      
+      console.log(ll.isEmpty()) // false
+      console.log(ll.size()) // 2
+      
+      console.log(ll)
+      
+      
+      // ----- doubly link list test --------
+      
+      console.log('// ---------- doubly link list -------------')
+      
+      const dll = new DoublyLinkedList()
+      
+      dll.append(1)
+      dll.append(2)
+      
+      dll.insert(0, 0)
+      dll.insert(3, 3)
+      
+      console.log(dll.get(2)) // 2
+      
+      console.log(dll.indexOf(3)) // 3
+      console.log(dll.indexOf(999)) // -1
+      
+      dll.removeAt(3)
+      dll.remove(2)
+      
+      dll.update(0, 'mio')
+      
+      console.log(dll.isEmpty()) // false
+      console.log(dll.size()) // 2
+      
+      console.log(dll)
+      
+    </script>
+    
+	</body>
+</html>
