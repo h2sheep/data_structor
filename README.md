@@ -12,4 +12,4 @@
 6. 二叉搜索树
 
 
-* 个人博客：https://h2sheep.cn/
+* 个人博客：https://h2sheep.gitee.io/
